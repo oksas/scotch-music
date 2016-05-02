@@ -1,0 +1,123 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  margin: 0;
+}
+
+.scotch_music {
+  position: relative;
+}
+
+.search div,
+.search input {
+  width: 100%;
+}
+
+.search input {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-bottom: 2px solid rgb(243, 139, 114);
+  outline: none;
+  padding: 5px;
+}
+
+.details__title {
+  color: white;
+  margin: 0;
+  padding: 50px 10px;
+  text-align: center;
+}
+
+.player {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.player div {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.player button {
+  outline: none;
+}
+
+.player .player__backward button,
+.player .player__forward button {
+  background: transparent;
+  border: 1px solid rgb(243, 139, 114);
+  border-radius: 50%;
+  color: rgb(243, 139, 114);
+  font-size: 36px;
+  height: 75px;
+  width: 75px;
+}
+
+.player .player__backward button {
+  border-left: none;
+}
+
+.player .player__forward button {
+  border-right: none;
+}
+
+.player .player__main button:hover,
+.player .player__backward button:hover,
+.player .player__forward button:hover {
+  border: 1px solid rgba(243, 139, 114, 0.7);
+  color: rgba(243, 139, 114, 0.7);
+}
+
+.player .player__main {
+  border: 1px solid rgb(243, 139, 114);
+}
+
+.player .player__main button {
+  background: transparent;
+  border: none;
+  color: rgb(243, 139, 114);
+  font-size: 35px;
+  height: 75px;
+  width: 75px;
+}
+
+.progress {
+  color: white;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.progress progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  margin: 0 4px;
+  width: 390px;
+}
+
+.progress progress[value]::-webkit-progress-bar {
+  background: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.progress progress[value]::-webkit-progress-value {
+  background-color: rgb(243, 139, 114);
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+  border-radius: 2px;
+}
+
+footer {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: #524c4c;
+}
+
+.footer p {
+  text-align: center;
+}

@@ -26,7 +26,7 @@ class Player extends React.Component {
             <span className="fa fa-random"></span>
           </button>
         </div>
-        <div className="play__forward">
+        <div className="player__forward">
           <button onClick={this.props.forward}>
             <span className="fa fa-forward"></span>
           </button>
