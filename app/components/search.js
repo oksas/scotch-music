@@ -25,8 +25,9 @@ class Search extends React.Component {
       <div
         style={isHighlighted ? listStyles.highligtedItem : listStyles.item}
         key={item.id}
-        id={item.id}
-      >{item.title}</div>
+        id={item.id}>
+        {item.title}
+      </div>
     );
   }
 
