@@ -10,7 +10,7 @@ import Footer from './components/footer';
 class AppContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.client_id = '2f98992c40b8edf17423d93bda2e04ab';
+    this.client_id = '983e8eb48daa6e8204e369a99cba62ce';
     this.state = {
       track: {
         stream_url: '',
@@ -65,13 +65,18 @@ class AppContainer extends React.Component {
   }
 
   stop() {
-    this.setState({ playStatus: Sound.status.STOPPED });
+    this.setState({
+      playStatus: Sound.status.STOPPED,
+      elapsed: '00:00',
+      position: 0
+    });
   }
 
   handleSelect(value, item) {
     this.setState({
       autoCompleteValue: value,
-      track: item
+      track: item,
+      playStatus: Sound.status.PLAYING
     });
   }
 
@@ -100,7 +105,10 @@ class AppContainer extends React.Component {
     const seconds = Math.floor(milliseconds / 1000);
     milliseconds = Math.floor(milliseconds % 1000);
 
-    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}seconds`;
+    const left = minutes < 10 ? `0${minutes}` : minutes;
+    const right = seconds < 10 ? `0${seconds}` : seconds;
+
+    return `${left}:${right}`;
   }
 
   handleSongPlaying(audio) {
