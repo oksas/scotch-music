@@ -1,13 +1,8 @@
 import React from "react";
 import AutoComplete from "react-autocomplete";
 
-class Search extends React.Component {
-  constructor() {
-    super();
-    this.handleRenderItem = this.handleRenderItem.bind(this);
-  }
-
-  handleRenderItem(item, isHighligted) {
+const Search = ({tracks, handleSelect, handleChange}) => {
+  const handleRenderItem = (item, isHighlighted) => {
     let listStyles = {
       item: {
         padding: "2px 6px",
@@ -29,27 +24,25 @@ class Search extends React.Component {
         {item.title}
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <div className="search">
-        <AutoComplete
-          ref="autocomplete"
-          inputProps={{title: "Title"}}
-          items={this.props.tracks}
-          getItemValue={(item) => item.title}
-          onSelect={this.props.handleSelect}
-          onChange={this.props.handleChange}
-          renderItem={this.handleRenderItem}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="search">
+      <AutoComplete
+        ref="autocomplete"
+        inputProps={{title: "Title"}}
+        items={tracks}
+        getItemValue={(item) => item.title}
+        onSelect={handleSelect}
+        onChange={handleChange}
+        renderItem={handleRenderItem}
+      />
+    </div>
+  );
+};
 
 Search.propTypes = {
-  items: React.PropTypes.array.isRequired,
+  tracks: React.PropTypes.array.isRequired,
   handleSelect: React.PropTypes.func.isRequired,
   handleChange: React.PropTypes.func.isRequired
 }
