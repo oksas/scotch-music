@@ -14,7 +14,7 @@ const Progress = ({elapsed, position, total}) => {
 
 Progress.propTypes = {
   elapsed: React.PropTypes.string.isRequired,
-  position: React.PropTypes.string.isRequired,
+  position: React.PropTypes.number.isRequired,
   total: React.PropTypes.string.isRequired
 };
 

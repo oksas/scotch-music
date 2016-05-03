@@ -56,18 +56,16 @@ body {
   width: 75px;
 }
 
-.player .player__backward button {
-  border-left: none;
-}
-
-.player .player__forward button {
-  border-right: none;
-}
-
-.player .player__main button:hover,
 .player .player__backward button:hover,
 .player .player__forward button:hover {
   border: 1px solid rgba(243, 139, 114, 0.7);
+  color: rgba(243, 139, 114, 0.7);
+}
+
+.player .player__main button:hover {
+  border: 1px solid rgba(243, 139, 114, 0.7);
+  border-top: none;
+  border-bottom: none;
   color: rgba(243, 139, 114, 0.7);
 }
 

@@ -27,7 +27,10 @@
     }
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "dependencies": {
     "axios": "^0.11.0",
@@ -37,10 +40,9 @@
     "classnames": "^2.2.4",
     "electron-prebuilt": "^0.37.8",
     "electron-reload": "^0.3.0",
-    "jquery": "^2.2.3",
-    "react": "^15.0.2",
+    "react": "^0.14.8",
     "react-autocomplete": "^1.0.0-rc2",
-    "react-dom": "^15.0.2",
+    "react-dom": "^0.14.8",
     "react-sound": "^0.4.0",
     "soundmanager2": "^2.97.20150601-a"
   }

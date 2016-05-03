@@ -25,27 +25,30 @@ const handleRenderItem = (item, isHighlighted) => {
   );
 };
 
-const Search = ({tracks, handleSelect, handleChange}) => {
-
-  return (
-    <div className="search">
-      <AutoComplete
-        ref="autocomplete"
-        inputProps={{title: "Title"}}
-        items={tracks}
-        getItemValue={(item) => item.title}
-        onSelect={handleSelect}
-        onChange={handleChange}
-        renderItem={handleRenderItem}
-      />
-    </div>
-  );
-};
+class Search extends React.Component {
+  render() {
+    return (
+      <div className="search">
+        <AutoComplete
+          ref="autocomplete"
+          inputProps={{title: "Title"}}
+          value={this.props.autoCompleteValue}
+          items={this.props.tracks}
+          getItemValue={(item) => item.title}
+          onSelect={this.props.handleSelect}
+          onChange={this.props.handleChange}
+          renderItem={handleRenderItem}
+        />
+      </div>
+    );
+  }
+}
 
 Search.propTypes = {
   tracks: React.PropTypes.array.isRequired,
   handleSelect: React.PropTypes.func.isRequired,
-  handleChange: React.PropTypes.func.isRequired
-}
+  handleChange: React.PropTypes.func.isRequired,
+  autoCompleteValue: React.PropTypes.string.isRequired
+};
 
 export default Search;
