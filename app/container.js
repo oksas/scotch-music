@@ -124,7 +124,7 @@ class AppContainer extends React.Component {
   }
 
   randomTrack() {
-    Axios.get(`https://api.soundcloud.com/playlists/209262931?client_id=${this.client_id}`)
+    Axios.get(`https://api.soundcloud.com/playlists/1357868?client_id=${this.client_id}`)
       .then(response => {
         const trackLength = response.data.tracks.length;
         const randomNumber = Math.floor((Math.random() * trackLength) + 1);
