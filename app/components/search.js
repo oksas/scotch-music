@@ -1,30 +1,31 @@
 import React from "react";
 import AutoComplete from "react-autocomplete";
 
-const Search = ({tracks, handleSelect, handleChange}) => {
-  const handleRenderItem = (item, isHighlighted) => {
-    let listStyles = {
-      item: {
-        padding: "2px 6px",
-        cursor: "default"
-      },
-      highlightedItem: {
-        color: "white",
-        background: "#f38b72",
-        padding: "2px 6px",
-        cursor: "defualt"
-      }
-    };
-
-    return (
-      <div
-        style={isHighlighted ? listStyles.highligtedItem : listStyles.item}
-        key={item.id}
-        id={item.id}>
-        {item.title}
-      </div>
-    );
+const handleRenderItem = (item, isHighlighted) => {
+  let listStyles = {
+    item: {
+      padding: "2px 6px",
+      cursor: "default"
+    },
+    highlightedItem: {
+      color: "white",
+      background: "#f38b72",
+      padding: "2px 6px",
+      cursor: "defualt"
+    }
   };
+
+  return (
+    <div
+      style={isHighlighted ? listStyles.highligtedItem : listStyles.item}
+      key={item.id}
+      id={item.id}>
+      {item.title}
+    </div>
+  );
+};
+
+const Search = ({tracks, handleSelect, handleChange}) => {
 
   return (
     <div className="search">
