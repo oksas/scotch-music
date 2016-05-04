@@ -21,6 +21,7 @@ class AppContainer extends React.Component {
       playStatus: Sound.status.STOPPED,
       elapsed: '00:00',
       total: '00:00',
+      totalRaw: 0,
       position: 0,
       playFromPosition: 0,
       autoCompleteValue: ''
@@ -34,6 +35,7 @@ class AppContainer extends React.Component {
     this.backward = this.backward.bind(this);
     this.stop = this.stop.bind(this);
     this.randomTrack = this.randomTrack.bind(this);
+    this.handleProgressClick = this.handleProgressClick.bind(this);
   }
 
   componentDidMount() {
@@ -80,6 +82,14 @@ class AppContainer extends React.Component {
     });
   }
 
+  handleProgressClick(event) {
+    const clickedSpot = event.nativeEvent.offsetX;
+    const totalWidth = event.nativeEvent.target.clientWidth;
+    this.setState({
+      playFromPosition: (clickedSpot / totalWidth) * this.state.totalRaw
+    });
+  }
+
   handleChange(event, value) {
     this.setState({
       autoCompleteValue: event.target.value
@@ -115,6 +125,7 @@ class AppContainer extends React.Component {
     this.setState({
       elapsed: this.formatMilliseconds(audio.position),
       total: this.formatMilliseconds(audio.duration),
+      totalRaw: audio.duration,
       position: audio.position / audio.duration
     });
   }
@@ -161,7 +172,8 @@ class AppContainer extends React.Component {
         <Progress
           elapsed={this.state.elapsed}
           total={this.state.total}
-          position={this.state.position} />
+          position={this.state.position}
+          handleProgressClick={this.handleProgressClick} />
         <Footer />
       </div>
     );
