@@ -8,4 +8,3 @@ A SoundCloud music player, built in Electron, alongside Christian Wamba's excell
 * Add unit tests?
 * Look into using local storage somehow (perhaps with electron-json-storage)
 * Login functionality?
-* Play from clicked point on progress bar (use click event on progress bar; use the event's offsetX prop)
