@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cool World Wide Web Site</title>
     <link href='https://fonts.googleapis.com/css?family=Exo+2:500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="public/css/global.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   </head>
   <body>
     <div id="content"></div>
 
-    <script src="public/js/bundle.js"></script>
+    <script>
+      document.currentScript.src = '';
+
+      var bundlePath = './static/bundle.js';
+      if (typeof process !== 'undefined' && process.env.ENVIRONMENT === 'DEV') {
+        console.log('setting to webpack dev server for bundle.js');
+        bundlePath = 'http://localhost:8080/static/bundle.js';
+      }
+
+      var bundleScriptEl = document.createElement('script');
+      bundleScriptEl.src = bundlePath;
+      document.currentScript.parentNode.insertBefore(bundleScriptEl, document.currentScript);
+    </script>
   </body>
 </html>

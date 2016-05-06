@@ -8,3 +8,4 @@ A SoundCloud music player, built in Electron, alongside Christian Wamba's excell
 * Add unit tests?
 * Look into using local storage somehow (perhaps with electron-json-storage)
 * Login functionality?
+* Play from clicked position even if music currently stopped

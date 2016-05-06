@@ -3,7 +3,7 @@ import React from 'react';
 const Details = ({title}) => {
   return (
     <div>
-      <h3 className="details__title">{title}</h3>
+      <h3 className="details__title">{title}sup</h3>
     </div>
   );
 };
