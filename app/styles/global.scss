@@ -84,6 +84,8 @@ body {
 
 .progress {
   color: black;
+  display: flex;
+  justify-content: center;
   margin-top: 100px;
   text-align: center;
 }

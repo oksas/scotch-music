@@ -1,11 +1,4 @@
 # Scotch Music Player
-A SoundCloud music player, built in Electron, alongside Christian Wamba's excellent [scotch.io tutorial](https://scotch.io/tutorials/build-a-music-player-with-react-electron-i-setup-basic-concepts). Initially very very close to the original version in the tutorial, but I am in the process of redesigning the app.
+A SoundCloud music player, built in Electron, alongside Christian Wamba's excellent [scotch.io tutorial](https://scotch.io/tutorials/build-a-music-player-with-react-electron-i-setup-basic-concepts). The app is generally quite close to what is built in the tutorial, but includes a few minor CSS differences, is built with Webpack rather than Browserify, and is organized a bit differently in terms of file structure. The only difference, feature-wise, between this and the version built in the tutorial is that the progress bar here can be clicked to play from arbitrary points in the song.
 
-## TODO
-* Fix spacing issues on progress bar (try flexbox?)
-* Completely redesign the app visuals (lol)
-* Look into refactoring container component (currently does way too much)
-* Add unit tests?
-* Look into using local storage somehow (perhaps with electron-json-storage)
-* Login functionality?
-* Play from clicked position even if music currently stopped
+As this was built as an exercise in learning the basics of Electron, there are no packaged releases, but you can follow [this guide in the Electron documentation](http://electron.atom.io/docs/v0.37.8/tutorial/application-packaging/) to package/release the app if you so choose (it's licensed under UNLICENSE, so what's mine is yours). In its current state, it is very slim on features though and would not really make a suitable music player.

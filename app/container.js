@@ -86,7 +86,8 @@ class AppContainer extends React.Component {
     const clickedSpot = event.nativeEvent.offsetX;
     const totalWidth = event.nativeEvent.target.clientWidth;
     this.setState({
-      playFromPosition: (clickedSpot / totalWidth) * this.state.totalRaw
+      playFromPosition: (clickedSpot / totalWidth) * this.state.totalRaw,
+      playStatus: Sound.status.PLAYING
     });
   }
 
